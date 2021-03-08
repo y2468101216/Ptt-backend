@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/PichuChen/go-bbs"
+	"github.com/Ptt-official-app/go-bbs"
 )
 
 func (repo *MockRepository) GetPopularArticles(ctx context.Context) ([]bbs.ArticleRecord, error) {

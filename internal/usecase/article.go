@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/PichuChen/go-bbs"
+	"github.com/Ptt-official-app/go-bbs"
 )
 
 // GetPopularArticles returns articles by descending comment_count

@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 
-	"github.com/PichuChen/go-bbs"
+	"github.com/Ptt-official-app/go-bbs"
 )
 
 func (repo *repository) GetPopularArticles(ctx context.Context) ([]bbs.ArticleRecord, error) {

@@ -1,10 +1,27 @@
 package mail
 
 import "fmt"
+import "net/url"
 
-func NewMail(mailDriver string) Mail {
-	// TODO: 根據 mailDriver 產生對應 mail
-	return &mail{}
+//stmp example - smtp://username:password@mail.smtp.com:25
+func NewMail(mailDriver string) (Mail, error) {
+	urlStruct, err := url.Parse(mailDriver)
+	if err != nil {
+		return nil, err
+	}
+
+	switch urlStruct.Scheme {
+		case "smtp" : 
+		provider, err := CreateSMTP(urlStruct)
+
+		if err != nil {
+			return nil, err
+		}
+
+		return provider, nil
+	}
+
+	return &mail{}, nil
 }
 
 type mail struct {
